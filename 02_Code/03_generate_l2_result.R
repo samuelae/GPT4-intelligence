@@ -63,6 +63,8 @@ for (j in 1:nrow(conditions)) {
 
   }
 
+  save(responses_list, file = paste0("01_Data/Raw/Increments/l2_responses_list_", sprintf("%04d", j), ".RData"))
+
   pb$tick()
   conditions_responses[[j]] <- responses_list
 
