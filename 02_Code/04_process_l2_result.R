@@ -13,7 +13,8 @@ data <- tibble(gender = character(length = 0),
                education = character(length = 0),
                cue = character(length = 0),
                response = character(length = 0),
-               response_position = numeric(length = 0))
+               response_position = numeric(length = 0),
+               resp_id = numeric(length = 0))
 
 for (i in 1:nrow(result)) {
 
@@ -32,7 +33,8 @@ for (i in 1:nrow(result)) {
                        education = result[i, ]$education,
                        cue = result[i, ]$cue,
                        response = responses_results[[j]],
-                       response_position = 1:length(responses_results[[j]])))
+                       response_position = 1:length(responses_results[[j]]),
+                       resp_id = (i - 1) * 10 + j))
 
   }
 
