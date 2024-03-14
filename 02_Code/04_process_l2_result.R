@@ -9,8 +9,7 @@ result <- read_csv("01_Data/Raw/l2_result.csv") %>%
 
 # process l2 responses -----
 
-data <- tibble(participant_id = numeric(length = 0),
-               gender = character(length = 0),
+data <- tibble(gender = character(length = 0),
                education = character(length = 0),
                cue = character(length = 0),
                response = character(length = 0),
@@ -29,8 +28,7 @@ for (i in 1:nrow(result)) {
   for (j in 1:length(responses_results)) {
 
     data <- data %>%
-      bind_rows(tibble(participant_id = (i - 1) * 10 + j,
-                       gender = result[i, ]$gender,
+      bind_rows(tibble(gender = result[i, ]$gender,
                        education = result[i, ]$education,
                        cue = result[i, ]$cue,
                        response = responses_results[[j]],
