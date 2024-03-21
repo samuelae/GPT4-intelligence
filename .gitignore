@@ -40,3 +40,5 @@ vignettes/*.pdf
 
 # macOS System Files
 .DS_Store
+
+Experiments/
